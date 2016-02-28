@@ -1,6 +1,4 @@
-# ExpressJS-Bootstrap-CRUD
-ExpressJS (NodeJS) + Bootstrap CRUD Demo
-
+# ExpressJS (NodeJS) + AngularJS + Bootstrap CRUD Demo
 
 *Credits*
 Egg icon: Sergei Kokota
