@@ -1,0 +1,27 @@
+nav#sidebar {
+    color: white;
+    width: 170px;
+    position: fixed;
+    background: #79559A;
+    top: 0;
+    bottom: 0;
+    #logged-user-avatar {
+        margin:10px auto;
+        width: 64px;
+        img {
+            width:64px;
+        }
+    }
+    >a {
+        display: block;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.1s background-color ease-in;
+    }
+    >a:hover,
+    >a.active {
+        background: rgba(255, 255, 255, 0.35);
+    }
+}

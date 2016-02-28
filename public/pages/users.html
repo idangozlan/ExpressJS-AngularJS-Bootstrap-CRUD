@@ -1,0 +1,103 @@
+<nav class="breadcrumbs">
+  <a href="/#!/">Home</a>
+  <a>Users</a>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Users List</h2>
+      <div class="panel panel-default table-responsive">
+        <!-- Table -->
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Status</th>
+              <th>Country</th>
+              <th>Register At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in users">
+              <td>{{user.id}}</td>
+              <td>{{user.username}}</td>
+              <td ng-switch="user.status">
+                <span ng-switch-when="active" class="label label-success">Active</span>
+                <span ng-switch-when="disactive" class="label label-warning">Disactive</span>
+              </td>
+              <td>{{user.country}}</td>
+              <td>{{user.created_at | date: 'mediumDate'}}</td>
+              <td>
+                <a ng-click="deleteUser(user)"><i class="fa fa-trash"></i></a>
+                <a ng-click="updateUser(user)"><i class="fa fa-edit"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-right">
+        <a ng-click="addUser()" class="btn btn-primary">Add User</a>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2>Statistics</h2>
+      <p>Placeholder</p>
+    </div>
+  </div>
+</div>
+<script type="text/ng-template" id="deleteUserModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Delete User</h3>
+  </div>
+  <div class="modal-body">
+    Are you sure?
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="doDeleteUser()">Delete User</button>
+  </div>
+</script>
+<script type="text/ng-template" id="addUserModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Add User</h3>
+  </div>
+  <div class="modal-body">
+    <form name="add_user">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input type="text" class="form-control" ng-model="user.country" placeholder="Country">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()" ng-disabled="addingUser">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="doAddUser()" ng-disabled="addingUser">Add User</button>
+  </div>
+</script>
+<script type="text/ng-template" id="updateUserModal.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Update User</h3>
+  </div>
+  <div class="modal-body">
+    <form name="add_user">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" ng-model="user.username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input type="text" class="form-control" ng-model="user.country" placeholder="Country">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="cancel()" ng-disabled="updatingUser">Cancel</button>
+    <button class="btn btn-primary" type="button" ng-click="doUpdateUser()" ng-disabled="updatingUser">Update User</button>
+  </div>
+</script>

@@ -1,0 +1,8 @@
+/.codelite
+/.sass-cache
+/.tern-project
+/.tern-port
+/*.workspace
+/node_modules
+/html-angular-validate-report.json
+/html-angular-validate-report-checkstyle.xml

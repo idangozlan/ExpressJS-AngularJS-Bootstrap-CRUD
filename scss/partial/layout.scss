@@ -1,0 +1,47 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+div.content-wrapper {
+    padding-left: 170px;
+}
+th {
+    font-weight:bold;
+}
+a {
+    color: #9F64D4;
+}
+a:active, a:hover, a:focus {
+    color: #6700C3;
+}
+nav.breadcrumbs {
+    padding-left:15px;
+    background: whitesmoke;
+    border-bottom: 1px solid #D3CCDA;
+    a {
+        color: #5A1B65;
+        text-decoration: none;
+        padding: 5px 0px 5px 2px;
+        display: inline-block;
+        &:not([href]),
+        &[href]:hover {
+            font-weight:bold;
+        }
+        &[href]:after{
+            content: "\f054";
+            font-family: 'FontAwesome';
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-size: 8px;
+            padding-left:5px;
+            font-weight:normal;
+        }
+        &:last-child:after{
+            content: '';
+        }
+    }
+    
+}
+[ng-click] {
+  cursor:pointer;
+}
